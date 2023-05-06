@@ -1,7 +1,15 @@
 {% extends 'base.html' %}
 
 {% block contenido %}
-<div class="col-md-6 offset-md-3">
+<div class="col-md-6 offset-md-3 mt-2">
+    {% if messages %}
+    {% for mensaje in messages %}
+      <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        {{ mensaje }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+    {% endfor %}
+  {% endif %}
     {% if user.is_authenticated %}
         <h1 class='text-center mt-2 mb-5'> BIENVENIDO {{ user.first_name|upper}} </h1>
     {% else %}

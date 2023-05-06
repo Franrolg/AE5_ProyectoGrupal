@@ -17,3 +17,11 @@
 ## Usuario registrado
 
 - Podrá iniciar sesión y así consultar el listado de usuarios, como también registrar proveedores en la BD.
+
+
+- Cuando se inicia sesión, solo los usuarios que son administradores podrán registrar usuarios, estos usuarios registrados podrán ser usuarios normale, staff o superusuario.
+- Los usuarios normales solo podrán ver las tablas de usuarios y proveedores registrados.
+- Los usuarios staff podrán ver las tablas de usuarios y proveedores, también podrán registrar estos últimos.
+- Los usuarios staff tendrán acesso a admin, pero solo podrá editar datos, no podrán ingresar, ni eliminar
+- Los usuarios normales solo tendrán acceso a la web y vista de las tablas
+- Los superusuarios podrán ver todo.
