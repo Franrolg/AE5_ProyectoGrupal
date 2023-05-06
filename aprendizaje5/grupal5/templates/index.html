@@ -3,7 +3,7 @@
 {% block contenido %}
 <div class="col-md-6 offset-md-3">
     {% if user.is_authenticated %}
-        <h1 class='text-center mt-2 mb-5'> BIENVENIDO </h1>
+        <h1 class='text-center mt-2 mb-5'> BIENVENIDO {{ user.first_name|upper}} </h1>
     {% else %}
         <h1 class='text-center mt-2 mb-5'> INICIAR SESIÓN </h1>
         <br>
