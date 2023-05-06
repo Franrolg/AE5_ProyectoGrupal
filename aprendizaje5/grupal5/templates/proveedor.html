@@ -27,4 +27,35 @@
         </div>
     </form>
 </div>
+{% if proveedores %}
+<div class="col-md-10 offset-md-1 mt-4">
+    <h1 class='text-center mt-2 mb-5'>PROVEEDORES REGISTRADOS</h1>
+    
+    <div class="container justify-content-center">
+    <table class="table col-12">
+        <thead>
+          <tr>
+            <th class="col-1" scope="col">#</th>
+            <th class="col-2" scope="col">Nombre</th>
+            <th class="col-3" scope="col">Actividad</th>
+            <th class="col-3" scope="col">Email</th>
+            <th class="col-3" scope="col">Teléfono</th>
+          </tr>
+        </thead>
+
+        <tbody>
+            {% for p in proveedores %}
+            <tr>
+                <th scope="row">{{ forloop.counter }} </th>
+                <td>{{p.nombre}} </td>
+                <td>{{p.actividad}} </td>
+                <td>{{p.email}}</td>
+                <td>{{p.telefono}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+      </table>
+    </div>
+</div>
+{% endif %}
 {% endblock contenido %}

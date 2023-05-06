@@ -4,6 +4,7 @@ from django.contrib import messages
 from django.shortcuts import redirect, render
 
 from .forms import FormularioRegistroUsuario, FormularioRegistroProveedor
+from .models import Proveedor
 
 def autenticar_usuario(request, usuario, contrasena):
     user = authenticate(request, username=usuario, password=contrasena)
@@ -47,4 +48,6 @@ def registrar_proveedor(request):
             return render(request, 'proveedor.html', {'form': FormularioRegistroProveedor(), 'message': 'Proveedor guardado en la base de datos'})
     else:
         form = FormularioRegistroProveedor()
-    return render(request, 'proveedor.html', {'form': form})
+    
+    proveedores = Proveedor.objects.all()
+    return render(request, 'proveedor.html', {'form': form, 'proveedores': proveedores})
